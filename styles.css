@@ -1,0 +1,137 @@
+* {
+  box-sizing: content-box;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 115%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  background-color: #f2f2f2;
+  color: #6A6A6A;
+}
+
+a,
+a:visited {
+  color: #A5AA93;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: normal;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+  margin-bottom: .5rem;
+}
+
+#main-container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 3rem;
+}
+
+.recipe-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 75vh;
+}
+
+.recipe-list li{
+
+  /* This is not good for scalability but it'll work for us */
+  flex: 0 0 100%;
+  width: 100%;
+  margin: .5rem;
+
+  /* Container */
+  border-radius: 1rem;
+
+  /* Background */
+  background-color: #ffffff;
+  background-image: url();
+  background-size: cover;
+  background-position: center;
+
+  /* This will keep everything in the li's */
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+}
+
+@media (min-width: 700px) {
+
+  .recipe-list li{
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    min-height: 500px;
+    height: 100%;
+    transition: flex .5s ease;
+  }
+
+  .recipe-list li:hover{
+    flex-grow: 2;
+  }
+
+}
+
+/* Multiple better ways of doing this, but again, this works for us */
+.recipe-list li.cookies {background-image: url(images/chocolate_chip_cookies.jpeg);}
+.recipe-list li.homemade-buns {background-image: url(images/homemade_buns.jpeg);}
+.recipe-list li.orange-chicken {background-image: url(images/asian_orange_chicken.jpeg);}
+
+.recipe-list li a {
+  z-index: 50;
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  background-image: linear-gradient(transparent 60%,rgba(0,0,0,.75));
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+}
+
+.img-custom {
+  border-radius: 1rem;
+}
+
+.back {
+  font-size: 3rem;
+  line-height: 1;
+  margin-left: -2rem;
+}
+
+.credit {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: .5rem .75rem .4rem;
+  display: block;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: .75rem;
+  text-transform: lowercase;
+}
